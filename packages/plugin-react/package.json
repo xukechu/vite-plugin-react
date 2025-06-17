@@ -1,8 +1,11 @@
 {
-  "name": "@vitejs/plugin-react",
-  "version": "4.5.2",
+  "name": "@vitejs/bd-plugin-react",
+  "version": "4.5.3",
   "license": "MIT",
   "author": "Evan You",
+  "publishConfig": {
+    "registry": "https://npm.xiaobaoonline.com/"
+  },
   "description": "The default Vite plugin for React projects",
   "keywords": [
     "vite",
@@ -17,7 +20,10 @@
     "Arnaud Barré"
   ],
   "files": [
-    "dist"
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
   ],
   "type": "module",
   "main": "./dist/index.cjs",
