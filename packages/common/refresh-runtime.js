@@ -611,21 +611,22 @@ export function validateRefreshBoundaryAndEnqueueUpdate(
     return 'Could not Fast Refresh (new export)'
   }
 
-  let hasExports = false
-  const allExportsAreComponentsOrUnchanged = predicateOnExport(
-    ignoredExports,
-    nextExports,
-    (key, value) => {
-      hasExports = true
-      if (isLikelyComponentType(value)) return true
-      return prevExports[key] === nextExports[key]
-    },
-  )
-  if (hasExports && allExportsAreComponentsOrUnchanged === true) {
-    enqueueUpdate()
-  } else {
-    return `Could not Fast Refresh ("${allExportsAreComponentsOrUnchanged}" export is incompatible). Learn more at __README_URL__#consistent-components-exports`
-  }
+  // let hasExports = false
+  // const allExportsAreComponentsOrUnchanged = predicateOnExport(
+  //   ignoredExports,
+  //   nextExports,
+  //   (key, value) => {
+  //     hasExports = true
+  //     if (isLikelyComponentType(value)) return true
+  //     return prevExports[key] === nextExports[key]
+  //   },
+  // )
+  enqueueUpdate()
+  // if (hasExports && allExportsAreComponentsOrUnchanged === true) {
+  //   enqueueUpdate()
+  // } else {
+  //   return `Could not Fast Refresh ("${allExportsAreComponentsOrUnchanged}" export is incompatible). Learn more at __README_URL__#consistent-components-exports`
+  // }
 }
 
 function predicateOnExport(ignoredExports, moduleExports, predicate) {
